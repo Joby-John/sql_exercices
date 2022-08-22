@@ -1,0 +1,39 @@
+drop table student;
+CREATE TABLE student(
+    student_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(20),
+    major VARCHAR  (20) DEFAULT 'undecided'
+);
+DESCRIBE student;
+SELECT * FROM student;
+
+INSERT INTO student (name, major) values ('jack','biology');/* used to insert values*/
+INSERT INTO student (name, major) values ('john','chemistry');/* these all can be done in the first line itself just by modifying the values
+continuously */
+INSERT INTO student (name, major) values ('joby','cs');
+INSERT INTO student (name, major) values ('rony','arts');
+INSERT INTO student (name) values ('jack');/*the default value of major gets into effect*/
+
+/* other constarints include NOT NULL- value cannot be null for that column, UNIQUE- value should be unique for that column, etc */
+
+UPDATE student /* this updates values based on conditions */
+SET major = 'computer science '
+WHERE major = 'cs';
+
+DELETE FROM student ; /* delete values of wntire student*/
+DELETE FROM student 
+WHERE major = 'undecided';
+
+SELECT student.name, student.student_id
+FROM student 
+ORDER BY student_id DESC/*gets name by the order of student id in ascending order by default unless specified otherwise*/
+LIMIT 4; /*only shows 4 rows*/
+
+SELECT *
+FROM STUDENT 
+WHERE name IN ('joby'); /*select all rows where name is joby */
+
+SELECT *
+FROM STUDENT 
+WHERE student_id > 2;/* filters the table and displays only rows greater than 2*/
+

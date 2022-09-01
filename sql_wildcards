@@ -1,0 +1,11 @@
+-- wildcards
+
+-- % = any number of characters,  _ = one charcater
+
+SELECT * -- finds any client name that has LLC in it
+FROM client 
+WHERE client_name LIKE '%LLC%';
+
+SELECT * -- finds an employee born in october
+FROM employee
+where birth_day LIKE '____-10%' --four dashes are for the year which is not specified

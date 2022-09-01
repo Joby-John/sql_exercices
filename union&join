@@ -1,0 +1,13 @@
+-- UNION
+SELECT first_name AS employee_name -- displays employee name and branch name 
+FROM employee
+UNION
+SELECT branch_name 
+FROM branch;
+
+-- JOIN
+SELECT employee.emp_id, employee.first_name, branch.branch_name -- finds all branches and their managers name
+FROM employee
+JOIN branch
+ON employee.emp_id = branch.mgr_id;
+-- LEFT JOIN includes all the rows in the left table and RIGHT JOIN does the opposite but a JOIN only icludes that matches

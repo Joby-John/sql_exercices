@@ -1,0 +1,12 @@
+--find surname and forename of all the employees
+SELECT first_name AS forename, last_name AS surname
+FROM employee
+ORDER BY sex, first_name, last_name
+limit 5; --list of employees ordered 
+
+--finds distinct values of selected columns
+SELECT DISTINCT sex -- diplays distinct sex
+FROM employee;
+
+SELECT  DISTINCT salary --displays all distinct salaries
+FROM employee;

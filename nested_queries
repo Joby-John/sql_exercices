@@ -1,0 +1,22 @@
+-- NESTED QUERIES
+
+-- Find names of employees that sold over 30000
+
+SELECT employee.first_name, employee.last_name
+FROM employee
+WHERE employee.emp_id IN(
+    SELECT works_with.emp_id
+    FROM works_with
+    WHERE works_with.total_sales > 30000
+);
+
+-- Find all clients who are handled by the branch that michael scott manages
+-- Assume you know Michaels id(102)
+
+SELECT client.client_name
+FROM client
+WHERE client.branch_id IN(
+    SELECT branch.branch_id
+    FROM branch
+    where mgr_id = 102
+);

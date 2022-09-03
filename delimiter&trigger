@@ -6,3 +6,5 @@ CREATE
     FOR EACH ROW BEGIN
         INSERT INTO trigger_test VALUES('added a new employee');
     END$$DELIMITER ; -- sets back to ;
+    
+    -- also dont forget to create a table in cases that iclude a new table before the trigger strikes else it wont function

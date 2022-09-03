@@ -11,3 +11,9 @@ FROM employee
 JOIN branch
 ON employee.emp_id = branch.mgr_id;
 -- LEFT JOIN includes all the rows in the left table and RIGHT JOIN does the opposite but a JOIN only icludes that matches
+
+--DELETE
+
+--ON DELETE SET NULL sets all foreign keys as NULL when the refernce is deleted
+--ON DELETE SET CASCADE DELETES the entire row
+

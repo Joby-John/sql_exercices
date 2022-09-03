@@ -1,0 +1,8 @@
+-- TRIGGER it does something when something happens
+DELIMITER $$ -- changes delimiter(;) to $$ and should be done on sql shell
+CREATE
+    TRIGGER my_trigger BEFORE INSERT
+    ON employee
+    FOR EACH ROW BEGIN
+        INSERT INTO trigger_test VALUES('added a new employee');
+    END$$DELIMITER ; -- sets back to ;
